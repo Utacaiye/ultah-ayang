@@ -24,7 +24,7 @@
       color: #cc3366;
     }
 
-    .slide {
+    .slide, .intro {
       display: none;
       flex-direction: column;
       align-items: center;
@@ -35,8 +35,8 @@
       animation: fade 0.5s ease;
     }
 
-    .slide.active {
-      display: flex;
+    .active {
+      display: flex !important;
     }
 
     button {
@@ -59,7 +59,6 @@
       display: none;
     }
 
-    /* Love animation */
     .love {
       position: absolute;
       top: -20px;
@@ -99,75 +98,95 @@
   </style>
 </head>
 <body>
-  <audio id="birthdayAudio" autoplay loop>
+
+  <!-- Audio lokal -->
+  <audio id="birthdayAudio" loop>
     <source src="audio/ultah.mp4" type="audio/mpeg">
-    Your browser does not support the audio element.
+    Browser kamu tidak mendukung audio.
   </audio>
 
-  <div class="slide active">
+  <!-- Intro Screen -->
+  <div class="intro active" id="introScreen">
+    <h1>🎁 Spesial Buat Bu Mentri 🎁</h1>
+    <p>Ucapan ini dari seseorang yang selalu sayang dan bangga sama kamu 💛</p>
+    <button onclick="startPresentation()">Buka Ucapan 🎉</button>
+  </div>
+
+  <!-- Slides -->
+  <div class="slide">
     <h1>🎉 Selamat Ulang Tahun, Bu Mentri Tersayang! 🎉</h1>
     <p><em>Selamat ulang tahun, Bu Mentri-ku yang paling aku sayangggg 😚</em></p>
     <p>Hari ini, kamu resmi masuk usia <strong>27 tahun</strong>.<br>
-    Itu artinya kamu udah bertahan selama:<br><br>
-    📆 <strong>9.855 hari</strong><br>
-    🗓️ <strong>1.408 minggu + 1 hari</strong><br>
-    🌕 <strong>324 bulan</strong><br>
-    ⏳ <strong>236.520 jam</strong><br><br>
-    (dan terus bertambah... kayak rasa sayang aku ke kamu 😜)</p>
+      Itu artinya kamu udah bertahan selama:<br><br>
+      📆 <strong>9.855 hari</strong><br>
+      🗓️ <strong>1.408 minggu + 1 hari</strong><br>
+      🌕 <strong>324 bulan</strong><br>
+      ⏳ <strong>236.520 jam</strong><br><br>
+      (dan terus bertambah... kayak rasa sayang aku ke kamu 😜)
+    </p>
     <button onclick="nextSlide()">Lanjut ➡️</button>
   </div>
 
   <div class="slide">
     <p>Segitu lamanya kamu bertahan —<br>
-    ngelewatin hari-hari yang mungkin nggak semuanya manis,<br>
-    tapi kamu tetap tumbuh, tetap tangguh, tetap luar biasa. ✨</p>
+      ngelewatin hari-hari yang mungkin nggak semuanya manis,<br>
+      tapi kamu tetap tumbuh, tetap tangguh, tetap luar biasa. ✨</p>
     <p>Aku nggak ngerti gimana cara Tuhan ngebentuk kamu sekomplit ini…</p>
     <p><strong>Mandiri iya, keras juga,</strong> tapi gampang melunak kalau aku udah mulai manja 😝</p>
     <p>Dan itu yang bikin aku... <em>jatuh.</em><br>
-    Jatuh yang lama. Jatuh yang nagih 😌</p>
+      Jatuh yang lama. Jatuh yang nagih 😌</p>
     <button onclick="nextSlide()">Lanjut ➡️</button>
   </div>
 
   <div class="slide">
     <p>Di umur <strong>27 tahun</strong> ini, aku punya harapan banyak buat kamu (dan semuanya tulus dari hati):</p>
     <p>
-    🧠 Semoga pikiran kamu makin jernih, sehat, dan damai.<br>
-    💛 Semoga hatimu makin sabar, luas, dan gampang maafin (termasuk aku 😅)<br>
-    🙏🏻 Semoga ibadahnya makin rajin, urusan makin lancar, rezeki makin lapang.<br>
-    ✨ Semoga mental kamu tetap kuat dan nggak gampang tumbang.<br>
-    💐 Semoga kamu makin cantik — luar dan dalam.<br>
-    👪 Semoga hubungan sama keluarga makin hangat dan erat.<br>
-    ❤️ Dan tentu aja... semoga kamu makin sayang sama aku (dan nggak pernah bosan disayang 😚)
+      🧠 Semoga pikiran kamu makin jernih, sehat, dan damai.<br>
+      💛 Semoga hatimu makin sabar, luas, dan gampang maafin (termasuk aku 😅)<br>
+      🙏🏻 Semoga ibadahnya makin rajin, urusan makin lancar, rezeki makin lapang.<br>
+      ✨ Semoga mental kamu tetap kuat dan nggak gampang tumbang.<br>
+      💐 Semoga kamu makin cantik — luar dan dalam.<br>
+      👪 Semoga hubungan sama keluarga makin hangat dan erat.<br>
+      ❤️ Dan tentu aja... semoga kamu makin sayang sama aku (dan nggak pernah bosan disayang 😚)
     </p>
     <button onclick="nextSlide()">Lanjut ➡️</button>
   </div>
 
   <div class="slide">
     <p><strong>Kamu nggak sendiri.</strong><br>
-    Ada aku, yang selalu pengen ada — selama kamu masih mau aku di situ.</p>
+      Ada aku, yang selalu pengen ada — selama kamu masih mau aku di situ.</p>
     <p><em>Selamat ulang tahun, Assa.</em><br>
-    Tetap jadi kamu yang unik, manis, dan nyebelin dalam dosis yang bikin kangen 😆</p>
+      Tetap jadi kamu yang unik, manis, dan nyebelin dalam dosis yang bikin kangen 😆</p>
     <p>Aku bangga sama kamu — bukan karena kamu sempurna,<br>
-    tapi karena kamu selalu berusaha jadi versi terbaik dari dirimu sendiri. 🤍</p>
+      tapi karena kamu selalu berusaha jadi versi terbaik dari dirimu sendiri. 🤍</p>
     <p style="font-size: 1.3rem;">🎂🎉🎈💛</p>
     <p><strong>– Dari aku,</strong><br>
-    yang sayang kamu... tiap hari, tiap jam, tiap 0,01 detik~ ⏰💕</p>
+      yang sayang kamu... tiap hari, tiap jam, tiap 0,01 detik~ ⏰💕</p>
     <button onclick="restartSlides()">Ulang dari Awal 🔄</button>
   </div>
 
-  <!-- Confetti script -->
+  <!-- Confetti library -->
   <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.5.1/dist/confetti.browser.min.js"></script>
 
   <script>
     const slides = document.querySelectorAll('.slide');
     let current = 0;
 
+    function startPresentation() {
+      document.getElementById('introScreen').classList.remove('active');
+      slides[0].classList.add('active');
+
+      const audio = document.getElementById('birthdayAudio');
+      audio.play().catch(err => {
+        console.log("Autoplay diblokir browser:", err);
+      });
+    }
+
     function nextSlide() {
       slides[current].classList.remove('active');
       current = (current + 1) % slides.length;
       slides[current].classList.add('active');
 
-      // Kalau slide terakhir, aktifkan confetti
       if (current === slides.length - 1) {
         confettiRain();
       }
@@ -179,7 +198,6 @@
       slides[current].classList.add('active');
     }
 
-    // Animasi love background
     function createLove() {
       const love = document.createElement("div");
       love.classList.add("love");
@@ -195,28 +213,13 @@
 
     setInterval(createLove, 300);
 
-    // Confetti function
     function confettiRain() {
-      const duration = 3 * 1000;
+      const duration = 3000;
       const end = Date.now() + duration;
-
       (function frame() {
-        confetti({
-          particleCount: 5,
-          angle: 60,
-          spread: 55,
-          origin: { x: 0 }
-        });
-        confetti({
-          particleCount: 5,
-          angle: 120,
-          spread: 55,
-          origin: { x: 1 }
-        });
-
-        if (Date.now() < end) {
-          requestAnimationFrame(frame);
-        }
+        confetti({ particleCount: 5, angle: 60, spread: 55, origin: { x: 0 } });
+        confetti({ particleCount: 5, angle: 120, spread: 55, origin: { x: 1 } });
+        if (Date.now() < end) requestAnimationFrame(frame);
       })();
     }
   </script>
