@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Selamat Ulang Tahun, Bu Mentri!</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background: #fffaf5;
+      color: #333;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      height: 100vh;
+      overflow: hidden;
+      position: relative;
+    }
+
+    h1 {
+      font-size: 2rem;
+      color: #cc3366;
+    }
+
+    .slide {
+      display: none;
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+      padding: 2rem;
+      max-width: 700px;
+      z-index: 1;
+      animation: fade 0.5s ease;
+    }
+
+    .slide.active {
+      display: flex;
+    }
+
+    button {
+      margin-top: 2rem;
+      padding: 0.8rem 1.5rem;
+      border: none;
+      border-radius: 8px;
+      background: #f4b400;
+      color: white;
+      font-size: 1rem;
+      cursor: pointer;
+      transition: 0.3s;
+    }
+
+    button:hover {
+      background: #db9e00;
+    }
+
+    audio {
+      display: none;
+    }
+
+    /* Love animation */
+    .love {
+      position: absolute;
+      top: -20px;
+      color: red;
+      font-size: 24px;
+      animation: fall 5s linear forwards;
+      user-select: none;
+      pointer-events: none;
+      z-index: 0;
+    }
+
+    @keyframes fall {
+      to {
+        transform: translateY(110vh);
+        opacity: 0;
+      }
+    }
+
+    @keyframes fade {
+      from { opacity: 0; transform: scale(0.98); }
+      to { opacity: 1; transform: scale(1); }
+    }
+
+    p {
+      line-height: 1.6;
+      font-size: 1.1rem;
+    }
+
+    strong {
+      color: #b30059;
+    }
+
+    em {
+      font-style: italic;
+      color: #993366;
+    }
+  </style>
+</head>
+<body>
+  <audio id="birthdayAudio" autoplay loop>
+    <source src="ultah.mp4" type="audio/mpeg">
+    Your browser does not support the audio element.
+  </audio>
+
+  <div class="slide active">
+    <h1>🎉 Selamat Ulang Tahun, Bu Mentri Tersayang! 🎉</h1>
+    <p><em>Selamat ulang tahun, Bu Mentri-ku yang paling aku sayangggg 😚</em></p>
+    <p>Hari ini, kamu resmi masuk usia <strong>27 tahun</strong>.<br>
+    Itu artinya kamu udah bertahan selama:<br><br>
+    📆 <strong>9.855 hari</strong><br>
+    🗓️ <strong>1.408 minggu + 1 hari</strong><br>
+    🌕 <strong>324 bulan</strong><br>
+    ⏳ <strong>236.520 jam</strong><br><br>
+    (dan terus bertambah... kayak rasa sayang aku ke kamu 😜)</p>
+    <button onclick="nextSlide()">Lanjut ➡️</button>
+  </div>
+
+  <div class="slide">
+    <p>Segitu lamanya kamu bertahan —<br>
+    ngelewatin hari-hari yang mungkin nggak semuanya manis,<br>
+    tapi kamu tetap tumbuh, tetap tangguh, tetap luar biasa. ✨</p>
+    <p>Aku nggak ngerti gimana cara Tuhan ngebentuk kamu sekomplit ini…</p>
+    <p><strong>Mandiri iya, keras juga,</strong> tapi gampang melunak kalau aku udah mulai manja 😝</p>
+    <p>Dan itu yang bikin aku... <em>jatuh.</em><br>
+    Jatuh yang lama. Jatuh yang nagih 😌</p>
+    <button onclick="nextSlide()">Lanjut ➡️</button>
+  </div>
+
+  <div class="slide">
+    <p>Di umur <strong>27 tahun</strong> ini, aku punya harapan banyak buat kamu (dan semuanya tulus dari hati):</p>
+    <p>
+    🧠 Semoga pikiran kamu makin jernih, sehat, dan damai.<br>
+    💛 Semoga hatimu makin sabar, luas, dan gampang maafin (termasuk aku 😅)<br>
+    🙏🏻 Semoga ibadahnya makin rajin, urusan makin lancar, rezeki makin lapang.<br>
+    ✨ Semoga mental kamu tetap kuat dan nggak gampang tumbang.<br>
+    💐 Semoga kamu makin cantik — luar dan dalam.<br>
+    👪 Semoga hubungan sama keluarga makin hangat dan erat.<br>
+    ❤️ Dan tentu aja... semoga kamu makin sayang sama aku (dan nggak pernah bosan disayang 😚)
+    </p>
+    <button onclick="nextSlide()">Lanjut ➡️</button>
+  </div>
+
+  <div class="slide">
+    <p><strong>Kamu nggak sendiri.</strong><br>
+    Ada aku, yang selalu pengen ada — selama kamu masih mau aku di situ.</p>
+    <p><em>Selamat ulang tahun, Assa.</em><br>
+    Tetap jadi kamu yang unik, manis, dan nyebelin dalam dosis yang bikin kangen 😆</p>
+    <p>Aku bangga sama kamu — bukan karena kamu sempurna,<br>
+    tapi karena kamu selalu berusaha jadi versi terbaik dari dirimu sendiri. 🤍</p>
+    <p style="font-size: 1.3rem;">🎂🎉🎈💛</p>
+    <p><strong>– Dari aku,</strong><br>
+    yang sayang kamu... tiap hari, tiap jam, tiap 0,01 detik~ ⏰💕</p>
+    <button onclick="restartSlides()">Ulang dari Awal 🔄</button>
+  </div>
+
+  <!-- Confetti script -->
+  <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.5.1/dist/confetti.browser.min.js"></script>
+
+  <script>
+    const slides = document.querySelectorAll('.slide');
+    let current = 0;
+
+    function nextSlide() {
+      slides[current].classList.remove('active');
+      current = (current + 1) % slides.length;
+      slides[current].classList.add('active');
+
+      // Kalau slide terakhir, aktifkan confetti
+      if (current === slides.length - 1) {
+        confettiRain();
+      }
+    }
+
+    function restartSlides() {
+      slides[current].classList.remove('active');
+      current = 0;
+      slides[current].classList.add('active');
+    }
+
+    // Animasi love background
+    function createLove() {
+      const love = document.createElement("div");
+      love.classList.add("love");
+      love.innerHTML = "❤️";
+      love.style.left = Math.random() * 100 + "vw";
+      love.style.fontSize = (16 + Math.random() * 20) + "px";
+      document.body.appendChild(love);
+
+      setTimeout(() => {
+        love.remove();
+      }, 5000);
+    }
+
+    setInterval(createLove, 300);
+
+    // Confetti function
+    function confettiRain() {
+      const duration = 3 * 1000;
+      const end = Date.now() + duration;
+
+      (function frame() {
+        confetti({
+          particleCount: 5,
+          angle: 60,
+          spread: 55,
+          origin: { x: 0 }
+        });
+        confetti({
+          particleCount: 5,
+          angle: 120,
+          spread: 55,
+          origin: { x: 1 }
+        });
+
+        if (Date.now() < end) {
+          requestAnimationFrame(frame);
+        }
+      })();
+    }
+  </script>
+</body>
+</html>
